@@ -27,7 +27,12 @@ namespace LeetcodeTest
             /*ReplaceElements(new[] {17, 18, 5, 4, 6, 1});
             RemoveDuplicates(new[] {1, 2, 3, 4, 5, 5, 5, 5, 5, 5, 6});
             MoveZeroes(new []{0,1,0,3,12});*/
-            SortArrayByParity(new[] {3, 1, 2, 4});
+            /*SortArrayByParity(new[] {3, 1, 2, 4});
+            ThirdMax(new[] {1, 2});*/
+            /*
+            FindDisappearedNumbers(new[] {4, 3, 2, 7, 8, 2, 3, 1});
+            */
+            FindDisappearedNumbers(new[] {1,1});
         }
 
         public static int FindMaxConsecutiveOnes(int[] nums)
@@ -236,7 +241,32 @@ namespace LeetcodeTest
         {
             return nums.OrderByDescending(item => item % 2 == 0).ToArray();
         }
+        
+        public static int HeightChecker(int[] heights)
+        {
+            var copyHeights = new int[heights.Length];
+            Array.Copy(heights, copyHeights, heights.Length);
+            Array.Sort(heights);
+            return heights.Where((t, i) => copyHeights[i] != t).Count();
+        }
 
+        public static int ThirdMax(int[] nums)
+        {
+            nums=nums.OrderBy(x=>x).Distinct().ToArray();
+            return nums.Length<3 ? nums.Max() : nums[^3];
+        }
+        
+        public static IList<int> FindDisappearedNumbers(int[] nums)
+        {
+            var result = new List<int>();
+            var enumerable = nums.Distinct().ToArray();
+            for (int i = 1; i <= nums.Length; i++)
+            {
+                if(Array.BinarySearch(enumerable,i) < 0) result.Add(i);
+            }
+
+            return result;
+        }
         private static void SwapInts(int[] array, int position1, int position2)
         {
             (array[position1], array[position2]) = (array[position2], array[position1]);
