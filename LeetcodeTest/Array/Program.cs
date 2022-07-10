@@ -24,9 +24,10 @@ namespace LeetcodeTest
             /*RemoveElement(new[] {3, 2, 2, 3}, 3);
             CheckIfExist(new[] {10, 2, 5, 3});*/
             /*ValidMountainArray(new[] {1,3,2});*/
-            ReplaceElements(new[] {17, 18, 5, 4, 6, 1});
+            /*ReplaceElements(new[] {17, 18, 5, 4, 6, 1});
             RemoveDuplicates(new[] {1, 2, 3, 4, 5, 5, 5, 5, 5, 5, 6});
-            MoveZeroes(new []{0,1,0,3,12});
+            MoveZeroes(new []{0,1,0,3,12});*/
+            SortArrayByParity(new[] {3, 1, 2, 4});
         }
 
         public static int FindMaxConsecutiveOnes(int[] nums)
@@ -231,6 +232,11 @@ namespace LeetcodeTest
             Console.WriteLine(nums);
         }
         
+        public static int[] SortArrayByParity(int[] nums)
+        {
+            return nums.OrderByDescending(item => item % 2 == 0).ToArray();
+        }
+
         private static void SwapInts(int[] array, int position1, int position2)
         {
             (array[position1], array[position2]) = (array[position2], array[position1]);
