@@ -59,16 +59,25 @@ namespace LeetcodeTest.Trees
             var right = MaxDepth(root.right);
             return Math.Max(left, right) + 1;
         }
-        
+
         public static bool IsSameTree(TreeNode p, TreeNode q)
         {
             if (p is null && q is null) return true;
-            if((p != null && q is null) || (p is null && q != null)) return false;
+            if ((p != null && q is null) || (p is null && q != null)) return false;
             if (p.val != q.val) return false;
-            
+
             var nextLeft = IsSameTree(p.left, q.left);
             var nextRight = IsSameTree(p.right, q.right);
             return nextLeft && nextRight;
+        }
+
+        public bool IsSubtree(TreeNode root, TreeNode subRoot)
+        {
+            if (root == subRoot) return true;
+            if (root is null) return false;
+            if (subRoot is null) return false;
+            return IsSubtree(root.left, subRoot) || IsSubtree(root.right, subRoot);
+
         }
     }
 }

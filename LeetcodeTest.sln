@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetcodeTest.Array", "Leetc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetcodeTest.Trees", "LeetcodeTest.Trees\LeetcodeTest.Trees.csproj", "{9CDB49A4-9904-462A-BF9C-5583F8A1977F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetcodeTest.NTries", "LeetcodeTest.NTries\LeetcodeTest.NTries.csproj", "{4D0D4AC2-C22F-4941-A2E1-2689ECEB4517}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{9CDB49A4-9904-462A-BF9C-5583F8A1977F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CDB49A4-9904-462A-BF9C-5583F8A1977F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CDB49A4-9904-462A-BF9C-5583F8A1977F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D0D4AC2-C22F-4941-A2E1-2689ECEB4517}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D0D4AC2-C22F-4941-A2E1-2689ECEB4517}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D0D4AC2-C22F-4941-A2E1-2689ECEB4517}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D0D4AC2-C22F-4941-A2E1-2689ECEB4517}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

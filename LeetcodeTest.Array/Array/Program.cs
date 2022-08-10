@@ -268,6 +268,7 @@ namespace LeetcodeTest
             return result;
         }
         
+        
         private static void SwapInts(int[] array, int position1, int position2)
         {
             (array[position1], array[position2]) = (array[position2], array[position1]);
