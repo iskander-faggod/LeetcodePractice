@@ -73,11 +73,15 @@ namespace LeetcodeTest.Trees
 
         public bool IsSubtree(TreeNode root, TreeNode subRoot)
         {
-            if (root == subRoot) return true;
             if (root is null) return false;
             if (subRoot is null) return false;
-            return IsSubtree(root.left, subRoot) || IsSubtree(root.right, subRoot);
-
+            return IsSubtree(root.left, subRoot) || IsSubtree(root.right, subRoot) || IsEqualTree(root, subRoot);
+        }
+            
+        private bool IsEqualTree(TreeNode s, TreeNode t) {
+            if (s == null || t == null)
+                return (s == null) && (t == null);
+            return IsEqualTree(s.left, t.left) && IsEqualTree(s.right, t.right) && s.val == t.val;        
         }
     }
 }
