@@ -83,6 +83,23 @@ namespace LeetcodeTest.Trees
                 return (s == null) && (t == null);
             return IsEqualTree(s.left, t.left) && IsEqualTree(s.right, t.right) && s.val == t.val;        
         }
+        
+        public static TreeNode LowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+            if (p.val > root.val && q.val > root.val)
+            {
+                // если две ноды в правом поддереве
+                return LowestCommonAncestor(root.right, p, q);
+            }
+            else if (p.val < root.val && q.val < root.val)
+            {
+                // если две ноды в левом поддереве
+                return LowestCommonAncestor(root.left, p, q);
+            }
+            else
+            {
+                return root;
+            }
+        }   
     }
 }
 
